@@ -1,0 +1,153 @@
+<!-- TEMPLATE: Copy this file to create new meeting pages -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[MONTH YEAR] Meeting - Pulaski Township Transparency</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Pulaski Township Transparency Project</h1>
+            <p>[MONTH YEAR] Supervisors Meeting</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#meetings">Meeting Archive</a></li>
+            <li><a href="../index.html#about">About</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="meeting-header">
+            <h1>[MONTH YEAR] Supervisors Meeting</h1>
+            <div class="meeting-meta">
+                <span><strong>Date:</strong> [Month Day, Year]</span>
+                <span><strong>Type:</strong> Regular Monthly Meeting</span>
+                <span><strong>Status:</strong> Transcribed & Summarized</span>
+            </div>
+        </div>
+
+        <section class="audio-player">
+            <h2>Meeting Recording</h2>
+            <audio controls>
+                <source src="../assets/audio/YYYY-MM-month.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <section id="summary">
+            <h2>Meeting Summary</h2>
+            
+            <button class="collapsible">Key Discussion Topics</button>
+            <div class="content">
+                <div class="content-inner">
+                    <h4>[Topic Name]</h4>
+                    <ul>
+                        <li>[Detail about topic]</li>
+                        <li>[Another detail]</li>
+                    </ul>
+                    
+                    <!-- Add more topics as needed -->
+                </div>
+            </div>
+
+            <button class="collapsible">Department Reports</button>
+            <div class="content">
+                <div class="content-inner">
+                    <h4>Fire Department</h4>
+                    <ul>
+                        <li>[Report details]</li>
+                    </ul>
+
+                    <h4>Road Department</h4>
+                    <ul>
+                        <li>[Report details]</li>
+                    </ul>
+
+                    <h4>Police Department</h4>
+                    <ul>
+                        <li>[Report details]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Public Concerns</button>
+            <div class="content">
+                <div class="content-inner">
+                    <ul>
+                        <li>[Concern raised by residents]</li>
+                        <li>[Township response]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Decisions or Agreements</button>
+            <div class="content">
+                <div class="content-inner">
+                    <ul>
+                        <li>[Decision made]</li>
+                        <li>[Motion approved]</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="collapsible">Other Notable Moments</button>
+            <div class="content">
+                <div class="content-inner">
+                    <ul>
+                        <li>[Notable moment or discussion]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="transcript">
+            <h2>Full Transcript</h2>
+            <button class="collapsible">View Complete Transcript</button>
+            <div class="content">
+                <div class="content-inner">
+                    <p><em>Full transcript will be available here once processed.</em></p>
+                    <p>[Or paste full transcript here]</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="downloads">
+            <h2>Downloads</h2>
+            <div class="info-box">
+                <p><strong>Audio Recording:</strong> <a href="../assets/audio/YYYY-MM-month.mp3" download>Download MP3</a></p>
+                <p><strong>Full Transcript:</strong> <a href="../assets/transcripts/YYYY-MM-month.txt" download>Download TXT</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Pulaski Township Transparency Project</p>
+            <p>This is a citizen-led initiative, not affiliated with Pulaski Township government.</p>
+        </div>
+    </footer>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
