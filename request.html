@@ -32,17 +32,19 @@
             <p>Pennsylvania's Right-to-Know Law gives you the right to request public records, including meeting recordings. This tool automatically generates a completed request form you can mail to the township.</p>
             
             <div class="info-box">
-                <p><strong>How it works:</strong></p>
+                <p><strong>How to Submit Your RTK Request:</strong></p>
+                
                 <ol>
-                    <li>Enter your contact information below</li>
+                    <li>Fill out your contact information below</li>
                     <li>Select which meeting recording you want</li>
-                    <li>Choose your preferred method:
+                    <li>Click "Generate RTK Request Form" to download your completed form</li>
+                    <li>Choose how to submit:
                         <ul style="margin-top: 0.5rem;">
-                            <li><strong>Email Method (Easiest):</strong> Opens pre-filled email in your email app</li>
-                            <li><strong>PDF Method:</strong> Downloads a form to print and mail</li>
+                            <li><strong>Email (Fastest):</strong> Attach the downloaded PDF to an email and send to the township</li>
+                            <li><strong>Mail:</strong> Print, sign, and mail to: Pulaski Township, 3478 Perry Highway, Hadley, PA 16130</li>
+                            <li><strong>In Person:</strong> Deliver during office hours (Mon-Fri, 8 AM - 4 PM)</li>
                         </ul>
                     </li>
-                    <li>Send via email or print, sign, and mail the PDF</li>
                 </ol>
             </div>
         </section>
@@ -125,25 +127,16 @@
                         <p><strong>Important:</strong> The township has 5 business days to respond to your request. They may charge a fee for copying costs (usually minimal for digital files). You can request the recording be sent via email to avoid fees.</p>
                     </div>
                     
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem;">
-                        <button type="button" id="emailBtn" onclick="generateEmail()"
-                                style="background-color: #059669; color: white; padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.2s;">
-                            📧 Email My Request<br>
-                            <small style="font-size: 0.85rem; font-weight: normal; opacity: 0.9;">(Recommended)</small>
-                        </button>
-                        
-                        <button type="button" id="pdfBtn" onclick="generatePDF()"
-                                style="background-color: var(--secondary-color); color: white; padding: 1rem 1.5rem; font-size: 1rem; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; transition: background-color 0.2s;">
-                            📄 Download PDF Form<br>
-                            <small style="font-size: 0.85rem; font-weight: normal; opacity: 0.9;">(Print & Mail)</small>
-                        </button>
-                    </div>
+                    <button type="submit" id="generateBtn"
+                            style="width: 100%; background-color: var(--secondary-color); color: white; padding: 1.25rem 2rem; font-size: 1.2rem; font-weight: 600; border: none; border-radius: 4px; cursor: pointer; margin-top: 1.5rem; transition: background-color 0.2s;">
+                        📄 Generate RTK Request Form
+                    </button>
                     
                     <div id="statusMessage" style="margin-top: 1rem; padding: 1rem; border-radius: 4px; display: none;"></div>
                     
                     <div style="margin-top: 1rem; padding: 1rem; background-color: #f0f9ff; border-left: 4px solid #0ea5e9; border-radius: 4px;">
                         <p style="margin: 0; font-size: 0.9rem; color: #0c4a6e;">
-                            <strong>💡 Tip:</strong> The email method is fastest and creates an automatic record of your request. The PDF method is useful if you prefer to mail a physical form.
+                            <strong>💡 Tip:</strong> After downloading, you can email the PDF as an attachment (fastest) or print and mail it (traditional).
                         </p>
                     </div>
                 </div>
@@ -151,39 +144,49 @@
         </section>
 
         <section id="after-download" style="margin-top: 3rem; display: none;">
-            <h2>✅ Your Request is Ready!</h2>
+            <h2>✅ Your Request Form is Ready!</h2>
             
             <div class="info-box">
-                <h3>Next Steps:</h3>
+                <h3>Next Steps - Choose One:</h3>
                 
-                <div id="emailInstructions" style="display: none;">
-                    <p><strong>For Email Submissions:</strong></p>
+                <div style="background: white; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0; border-left: 4px solid #059669;">
+                    <h4 style="margin-top: 0; color: #059669;">📧 Option 1: Email (Fastest)</h4>
                     <ol>
-                        <li><strong>Review</strong> the pre-filled email that opened</li>
-                        <li><strong>Add the township's email</strong> in the "To:" field (verify current email with township)</li>
-                        <li><strong>Click Send</strong> in your email client</li>
-                        <li><strong>Keep a copy</strong> of the sent email for your records</li>
+                        <li>Open your email application</li>
+                        <li>Create a new email to the township</li>
+                        <li>Attach the PDF you just downloaded</li>
+                        <li>Add subject: "Right-to-Know Request"</li>
+                        <li>Click Send</li>
                     </ol>
-                    <p style="margin-top: 1rem;"><strong>Tip:</strong> Email requests create an automatic timestamp and paper trail.</p>
+                    <p style="margin-bottom: 0;"><strong>Township Email:</strong> [Verify current email with township at (724) 253-2300]</p>
                 </div>
                 
-                <div id="pdfInstructions" style="display: none;">
-                    <p><strong>For PDF Submissions:</strong></p>
+                <div style="background: white; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0; border-left: 4px solid var(--secondary-color);">
+                    <h4 style="margin-top: 0; color: var(--secondary-color);">📦 Option 2: Mail</h4>
                     <ol>
-                        <li><strong>Review the PDF</strong> - Make sure all information is correct</li>
-                        <li><strong>Print and sign</strong> the form</li>
-                        <li><strong>Mail to:</strong>
-                            <div style="margin: 1rem 0; padding: 1rem; background: white; border-radius: 4px;">
+                        <li>Print the PDF</li>
+                        <li>Sign the form</li>
+                        <li>Mail to:
+                            <div style="margin: 0.5rem 0; padding: 1rem; background: #f9fafb; border-radius: 4px;">
                                 <strong>Pulaski Township Right-to-Know Officer</strong><br>
                                 3478 Perry Highway<br>
                                 Hadley, PA 16130
                             </div>
                         </li>
-                        <li><strong>Or deliver in person</strong> during office hours (Mon-Fri, 8 AM - 4 PM)</li>
                     </ol>
                 </div>
                 
-                <p style="margin-top: 1rem;"><strong>Questions?</strong> Call the township at (724) 253-2300</p>
+                <div style="background: white; padding: 1.5rem; border-radius: 4px; margin: 1.5rem 0; border-left: 4px solid var(--accent-color);">
+                    <h4 style="margin-top: 0; color: var(--accent-color);">🏛️ Option 3: In Person</h4>
+                    <ol>
+                        <li>Print the PDF and sign it</li>
+                        <li>Deliver to township office during business hours</li>
+                        <li><strong>Hours:</strong> Monday-Friday, 8:00 AM - 4:00 PM</li>
+                        <li><strong>Phone:</strong> (724) 253-2300</li>
+                    </ol>
+                </div>
+                
+                <p style="margin-top: 1.5rem;"><strong>Remember:</strong> The township must respond within 5 business days.</p>
             </div>
         </section>
 
@@ -379,9 +382,109 @@ doubletreeindustries.com`;
             });
         }
 
-        // Remove form submission handler - buttons now call functions directly
+        // Handle form submission
+        document.getElementById('rtkForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            await generatePDF();
+        });
 
         async function generatePDF() {
+            // Validate form first
+            const form = document.getElementById('rtkForm');
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            const btn = document.getElementById('pdfBtn');
+            const statusDiv = document.getElementById('statusMessage');
+            
+            // Disable button and show loading
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Generating PDF...';
+            statusDiv.style.display = 'block';
+            statusDiv.style.backgroundColor = '#e0f2fe';
+            statusDiv.style.border = '1px solid #0ea5e9';
+            statusDiv.style.color = '#0c4a6e';
+            statusDiv.textContent = 'Creating your RTK request form...';
+
+            try {
+                // Get form values
+                const formData = {
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    address: document.getElementById('address').value,
+                    city: document.getElementById('city').value,
+                    state: document.getElementById('state').value,
+                    zip: document.getElementById('zip').value,
+                    phone: document.getElementById('phone').value,
+                    meetingDate: document.getElementById('meetingDate').value
+                };
+
+                // Call Cloudflare Worker
+                const response = await fetch('/api/generate-pdf', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (!response.ok) {
+                    throw new Error(`Server error: ${response.status}`);
+                }
+
+                // Get PDF blob
+                const blob = await response.blob();
+                
+                // Create download link
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                
+                // Get filename from Content-Disposition header or create one
+                const disposition = response.headers.get('Content-Disposition');
+                let filename = 'RTK_Request.pdf';
+                if (disposition) {
+                    const filenameMatch = disposition.match(/filename="?([^"]+)"?/);
+                    if (filenameMatch) {
+                        filename = filenameMatch[1];
+                    }
+                }
+                link.download = filename;
+                
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+
+                // Success message
+                statusDiv.style.backgroundColor = '#d1fae5';
+                statusDiv.style.border = '1px solid #059669';
+                statusDiv.style.color = '#065f46';
+                statusDiv.innerHTML = '<strong>✅ Success!</strong> Your RTK request form has been downloaded. Check your Downloads folder.';
+
+                // Show next steps
+                document.getElementById('after-download').style.display = 'block';
+                document.getElementById('after-download').scrollIntoView({ behavior: 'smooth' });
+
+                // Reset button
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerHTML = '📄 Download PDF Form<br><small style="font-size: 0.85rem; font-weight: normal; opacity: 0.9;">Downloads form to print & mail</small>';
+                }, 2000);
+
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+                statusDiv.style.backgroundColor = '#fee2e2';
+                statusDiv.style.border = '1px solid #dc2626';
+                statusDiv.style.color = '#991b1b';
+                statusDiv.innerHTML = '<strong>❌ Error:</strong> Could not generate PDF. Please try again or contact <a href="mailto:jon@doubletreeindustries.com">jon@doubletreeindustries.com</a> for assistance.';
+                
+                btn.disabled = false;
+                btn.innerHTML = '📄 Try Again<br><small style="font-size: 0.85rem; font-weight: normal; opacity: 0.9;">Downloads form to print & mail</small>';
+            }
+        }
             // Validate form first
             const form = document.getElementById('rtkForm');
             if (!form.checkValidity()) {
