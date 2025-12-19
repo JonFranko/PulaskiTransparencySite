@@ -1,0 +1,11 @@
+name = "pulaski-rtk-filler"
+main = "worker-rtk-filler.js"
+compatibility_date = "2025-12-19"
+
+# Enable Node.js compatibility for pdf-lib
+node_compat = true
+
+# Routes - this worker handles the API endpoint
+routes = [
+  { pattern = "your-site.pages.dev/api/fill-rtk", zone_name = "your-site.pages.dev" }
+]
